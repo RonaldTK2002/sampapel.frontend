@@ -1,0 +1,14 @@
+header{
+    background-color: #A8D5E2;
+    padding:20px 0px;
+    border-bottom:2px black solid;
+}
+.headerContainer{
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    justify-content:space-evenly;
+}
+.logoHeader{
+    width:250px;
+}

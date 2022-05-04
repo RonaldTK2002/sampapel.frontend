@@ -1,0 +1,54 @@
+footer {
+  font-family: "Inter", sans-serif;
+  color: white;
+  background-color: black;
+  padding: 20px 150px 100px 150px;
+}
+.socialmedia {
+  font-size: 12px;
+  font-weight: 700;
+  align-items: center;
+}
+.footerContainer {
+  border-top: 2px solid white;
+  border-bottom: 2px solid white;
+  padding: 10px 0;
+}
+.footerContainerIcons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  align-items: flex-end;
+}
+.socialIcons {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-around;
+  
+  
+}
+.icons {
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.listaSuporte {
+  display: flex;
+  list-style-type: none;
+}
+.listaSuporte li {
+  margin-left: 25px;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.informaçõesPapelaria {
+  display: flex;
+  list-style-type: none;
+  flex-direction: column;
+  row-gap: 5px;
+  font-size: 12px;
+  font-weight: 400;
+  margin-top: 10px;
+}
