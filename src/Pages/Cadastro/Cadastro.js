@@ -12,12 +12,15 @@ function Cadastro(){
 
             <div className="backgroundLogin">
         <div className="loginContainer">
-          <h1 className="loginTitle">Crie seu cadastro!</h1>
+            <div className="linhaCadastro">
+                <h1 className="loginTitle">Crie seu cadastro!</h1>
+            </div>
           <form className="inputsPaginaLogin">
             <div className="loginInputContainer">
-                <h1>Dados pessoais:</h1>
+                <div className="dados">
+                <h1 className="fonteDados">Dados pessoais:</h1>
+                </div>
                 <h3>Nome completo:</h3>
-                <div className="linha">
               <input
                 className="inputLogin"
                 type="nome"
@@ -73,8 +76,8 @@ function Cadastro(){
                 placeholder="(__) ____-____"
                 required
               />
-                </div>
-              <h1>Dados de Login:</h1>
+              <div className='linha'/>
+              <h1 className="fonteDados">Dados de Login:</h1>
               <h3>E-mail:</h3>
               <input
                 className="inputLogin"
@@ -111,7 +114,6 @@ function Cadastro(){
           </form>
         </div>
       </div>
-
             <Footer/>
         </di>
     )
