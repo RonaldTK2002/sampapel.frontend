@@ -11,7 +11,7 @@ function Routes() {
         <Route path = '/cadastro' component = {Cadastro}/>
         <Route path="/login" component={Login} />
         <Route path= '/' component = {()=> <Redirect to ='/login'/>}/>
-        <Route path ='/home' component = {Home}/>
+        <Route path ='/home' component = {Home}/> 
       </Switch>
     </BrowserRouter>
   );

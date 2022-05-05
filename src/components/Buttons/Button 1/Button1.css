@@ -1,0 +1,12 @@
+#buttonLogin{
+    background-color: #3248AE;
+    border-color:#3248AE;
+    color:#ffffff;
+    font-weight:400;
+}
+.buttonsLogin{
+    border-radius:15px;
+    font-size:20px;
+    padding:10px 80px;
+    width:100%;
+}
