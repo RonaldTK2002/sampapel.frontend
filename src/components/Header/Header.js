@@ -8,11 +8,11 @@ function Header() {
   return (
     <header>
       <div className ='headerContainer'>
-        <MenuOutlinedIcon fontSize = 'large'/>
-        <FavoriteBorderOutlinedIcon fontSize = 'large'/>
-        <img className = 'logoHeader' src = '/images/sampapellogo.png'/>
-        <ShoppingCartOutlinedIcon fontSize = 'large' />
-        <AccountCircleOutlinedIcon fontSize = 'large'/>
+        <button className="headerButtons"><MenuOutlinedIcon fontSize = 'large'/></button>
+        <button className="heart"><FavoriteBorderOutlinedIcon fontSize = 'large'/></button>
+        <button className="headerButtons"><img className = 'logoHeader' src = '/images/sampapellogo.png'/></button>
+        <button className="headerButtons"><ShoppingCartOutlinedIcon fontSize = 'large' /></button>
+        <button className="headerButtons"><AccountCircleOutlinedIcon fontSize = 'large'/></button>
       </div>
     </header>
   );

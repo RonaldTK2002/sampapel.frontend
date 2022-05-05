@@ -41,6 +41,7 @@ footer {
   margin-left: 25px;
   font-size: 14px;
   font-weight: 400;
+  margin-bottom:5px;
 }
 
 .informaçõesPapelaria {
@@ -51,4 +52,7 @@ footer {
   font-size: 12px;
   font-weight: 400;
   margin-top: 10px;
+}
+.tituloFooter{
+  font-size:25px;
 }

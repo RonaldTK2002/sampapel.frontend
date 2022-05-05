@@ -16,7 +16,7 @@ function Footer() {
           <li>Parceiros</li>
         </ul>
         <div className="footerContainer">
-          <h1>REDES SOCIAIS</h1>
+          <h1 className = 'tituloFooter'>REDES SOCIAIS</h1>
           <div className="footerContainerIcons">
             <ul className="socialIcons">
               <li className="icons">

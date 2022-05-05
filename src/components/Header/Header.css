@@ -1,7 +1,7 @@
 header{
     background-color: #A8D5E2;
     padding:20px 0px;
-    border-bottom:2px black solid;
+    border-bottom:3px black solid;
 }
 .headerContainer{
     display:flex;
@@ -11,4 +11,27 @@ header{
 }
 .logoHeader{
     width:250px;
+    
+}
+.headerButtons{
+    background-color:#A8D5E2;
+    border:none;
+}
+
+.headerButtons:hover{
+    
+    transform: scale(1.1);
+    cursor:pointer;
+    transition:100ms;
+}
+
+.heart{
+    background-color:#A8D5E2;
+    border:none;
+}
+.heart:hover{
+    color:red;
+    transform: scale(1.1);
+    cursor:pointer;
+    transition:100ms;
 }
