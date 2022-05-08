@@ -1,9 +1,10 @@
 import React from "react";
 import "./Login.css";
-import  Header from "../../components/Header";
-import Footer from '../../components/Footer';
-
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
+import { useHistory } from "react-router-dom";
 function Login() {
+  let history = useHistory();
   return (
     <div>
       <Header />
@@ -39,6 +40,7 @@ function Login() {
                 className="buttonsLogin"
                 type="button"
                 value="cadastro"
+                onClick={() => (window.location.href = "cadastro")}
               >
                 Cadastre-se
               </button>
