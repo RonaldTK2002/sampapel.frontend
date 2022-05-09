@@ -1,26 +1,25 @@
-import { Link } from '@mui/material'
-import React from 'react'
-import Footer from '../../components/Footer'
-import Header from '../../components/Header'
-import './Cadastro.css'
+import { Link } from "@mui/material";
+import React from "react";
+import Footer from "../../components/Footer";
+import Header from "../../components/Header";
+import "./Cadastro.css";
 
-function Cadastro(){
-    
-    return (
-        <di>
-            <Header/>
+function Cadastro() {
+  return (
+    <di>
+      <Header />
 
-            <div className="backgroundLogin">
+      <div className="backgroundLogin">
         <div className="loginContainer">
-            <div className="linhaCadastro">
-                <h1 className="loginTitle">Crie seu cadastro!</h1>
-            </div>
+          <div className="linhaCadastro">
+            <h1 className="loginTitle">Crie seu cadastro!</h1>
+          </div>
           <form className="inputsPaginaLogin">
             <div className="loginInputContainer">
-                <div className="dados">
+              <div className="dados">
                 <h1 className="fonteDados">Dados pessoais:</h1>
-                </div>
-                <h3>Nome completo:</h3>
+              </div>
+              <h3>Nome completo:</h3>
               <input
                 className="inputLogin"
                 type="nome"
@@ -76,7 +75,7 @@ function Cadastro(){
                 placeholder="(__) ____-____"
                 required
               />
-              <div className='linha'/>
+              <div className="linha" />
               <h1 className="fonteDados">Dados de Login:</h1>
               <h3>E-mail:</h3>
               <input
@@ -110,15 +109,22 @@ function Cadastro(){
                 Criar cadastro!
               </button>
             </div>
-            <Link href="#" color="inherit" className="linkLogin" onClick={()=> {window.location.href = "/login"}}>Já possui cadastro? Login</Link>
+            <Link
+              href="#"
+              color="inherit"
+              className="linkLogin"
+              onClick={() => {
+                window.location.href = "/login";
+              }}
+            >
+              Já possui cadastro? Login
+            </Link>
           </form>
         </div>
       </div>
-            <Footer/>
-        </di>
-    )
-
+      <Footer />
+    </di>
+  );
 }
 
-
-export default Cadastro
+export default Cadastro;

@@ -2,6 +2,7 @@ header{
     background-color: #A8D5E2;
     padding:20px 0px;
     border-bottom:3px black solid;
+    
 }
 .headerContainer{
     display:flex;
@@ -34,4 +35,15 @@ header{
     transform: scale(1.1);
     cursor:pointer;
     transition:100ms;
+}
+.MuiMenu-list{
+    background-color: #A8D5E2;
+    border:black solid 2px;
+    font-family: "Inter", sans-serif;;
+    
+}
+.menuTitle{
+    font-size:25px;
+    margin: 0 10px;
+    
 }

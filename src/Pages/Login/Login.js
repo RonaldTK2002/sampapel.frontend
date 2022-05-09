@@ -2,11 +2,13 @@ import React from "react";
 import "./Login.css";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
-import { useHistory } from "react-router-dom";
+
+
 function Login() {
-  let history = useHistory();
+
   return (
     <div>
+      
       <Header />
       <div className="backgroundLogin">
         <div className="loginContainer">
