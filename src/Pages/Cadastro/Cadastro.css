@@ -70,12 +70,13 @@
     .linha{
         border-bottom: solid 2px #3248AE;
         padding-bottom: 30px;
+        width: 500px;
     }
     
     .linhaCadastro{
         border-bottom: solid 2px #3248AE;
         padding-bottom: 30px;
-        margin: 0 30px;
+        width: 500px;
     }
 
     .fonteDados{
