@@ -34,13 +34,13 @@
 }
 
 .inputsPaginaPerfil{
-    display:flex;
-    flex-direction: column;
-    align-items: center;
+    display: flex;
+    justify-content: center;
 }
 
 .perfilInputContainer{
     display:flex;
+    max-width: 800px;
     flex-direction:column;
     row-gap:20px;
     margin-bottom:15px;
@@ -53,6 +53,16 @@
 .fonteDados{
     font-weight:500;
     font-size:30px;
+}
+
+.dadosValor{
+    display: flex;
+    align-items: center;
+    margin: 15px;
+    height: 45px;
+    max-width: 500px;
+    background-color: #e0e0e0;
+    border-radius: 40px;
 }
 
 .inputPerfil{
@@ -74,6 +84,32 @@
     flex-direction: row;
 }
 
+.imagemBotao{
+    display: flex;
+    align-items: flex-start;
+    margin:40px auto 200px;
+    justify-content: center;
+
+}
+
+.imgUltimosComprados{
+    height:200px;
+}
+
+.botaoFavorito{
+    border:none;
+    background:white;
+    color: lightgray;
+
+}
+
+.botaoFavoritado{
+    border:none;
+    background:white;
+    color:red;
+    
+}
+
 .dadosProduto{
     margin: 15px;
 }
@@ -82,34 +118,22 @@
     font-weight: 300;
 }
 
-#buttonComprarNovamente{
+.botaoComprarNovamente{
     background-color: #3248AE;
-    border-color:#3248AE;
-    color:#ffffff;
+    color:white;
     font-weight:400;
+    font-size:14px;
+    padding:5px 30px;
+    border-radius:10px;
+    border: transparent;
 }
-
-.buttonsComprarNovamente{
-    border-radius:15px;
-    font-size:15px;
-    width:40px;
+.botaoComprarNovamente:hover{
+    transform: scale(1.01);
+    transition: 100ms;
 }
 
 .linha{
     border-bottom: solid 2px #3248AE;
     padding-bottom: 30px;
-    width: 500px;
-}
-
-.loginButtonContainer{
-    display:flex;
-    flex-direction: column;
-    row-gap:10px;
-
-}
-
-.buttonsComprarNovamente:hover{
-    cursor:pointer;
-    transform: scale(1.05);
-    transition:100ms;
+    width: 100%;
 }

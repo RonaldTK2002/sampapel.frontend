@@ -2,168 +2,151 @@ import React from 'react'
 import './Perfil.css'
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
-import Box from '@mui/material/Box';
+import FavoriteIcon from "@mui/icons-material/Favorite";
+import { Typography } from '@mui/material';
+import CarrosselPerfilProdutosComprados from '../../components/Carrossel/CarrosselPerfilProdutosComprados';
 
-function Perfil(){
-  return (
-    <di>
-        <Header />
-        <div className="backgroundPerfil">
-            <div className="perfilContainer">
-            <div className="linhaPerfil">
-                <h1 className="perfilTitle">Seu perfil!</h1>
-            </div>
-            <form className="inputsPaginaPerfil">
-                <div className="perfilInputContainer">
-                <div className="dados">
-                    <h2 className="fonteDados">Dados pessoais:</h2>
+
+function Perfil() {
+
+    function replaceIcon(id) {
+        if (document.getElementById(id).className === "botaoFavorito")
+            document.getElementById(id).className = "botaoFavoritado";
+        else document.getElementById(id).className = "botaoFavorito";
+    }
+
+    const dadosPessoais =
+        [
+            {
+                title: 'E-mail:',
+                value: 'exemplo@cpejr.com.br',
+            },
+            {
+                title: 'Nome completo:',
+                value: 'João da Silva',
+            },
+            {
+                title: 'CPF:',
+                value: '111.111.111-11',
+            },
+            {
+                title: 'Telefone:',
+                value: '(31)9xxxx-xxxx',
+            },
+            {
+                title: 'Endereço:',
+                value: 'Rua Alguma , 10',
+            },
+            {
+                title: 'Cidade:',
+                value: 'Belo Horizonte',
+            },
+            {
+                title: 'Estado:',
+                value: 'Minas Gerais',
+            },
+        ];
+
+
+
+    return (
+        <di>
+            <Header />
+            <div className="backgroundPerfil">
+                <div className="perfilContainer">
+                    <div className="linhaPerfil">
+                        <h1 className="perfilTitle">Seu perfil!</h1>
+                    </div>
+                    <div className="inputsPaginaPerfil">
+                        <div className="perfilInputContainer">
+                            <div className="dados">
+                                <h2 className="fonteDados">Dados pessoais:</h2>
+                            </div>
+                            {dadosPessoais.map((dados) => {
+                                return (
+                                    <div>
+                                        <Typography variant="h5">{dados.title}</Typography>
+                                        <div className="dadosValor"><Typography variant="h6" marginLeft={"25px"}>{dados.value}</Typography></div>
+                                    </div>
+                                );
+                            })}
+                            <div className="linha" />
+                            <h1 className="fonteDados">Últimos pedidos:</h1>
+                            <div className='boxUltimosPedidos'>
+                                <div className="boxProduto">
+                                    <div className="imagemBotao">
+                                        <img className="imgUltimosComprados" src="/images/mochilaben10.png" />
+                                        <button
+                                            className="botaoFavorito"
+                                            id="mochilaben10"
+                                            onClick={() => replaceIcon(id)}
+                                        >
+                                            <FavoriteIcon fontSize="large" />
+                                        </button>
+                                    </div>
+                                    <div className="dadosProduto">
+                                        <h3>Produto A</h3>
+                                        <h3 className="fonteValor">R$10,00</h3>
+                                        <h5 className="fonteValor">Comprado em:__/__/____</h5>
+                                        <button className="botaoComprarNovamente">
+                                            Comprar novamente!
+                                        </button>
+                                    </div>
+                                </div>
+                                <div className="boxProduto">
+                                    <div className="imagemBotao">
+                                        <img className="imgUltimosComprados" src="/images/mochilaben10.png" />
+                                        <button
+                                            className="botaoFavorito"
+                                            id="mochilaben10"
+                                            onClick={() => replaceIcon(id)}
+                                        >
+                                            <FavoriteIcon fontSize="large" />
+                                        </button>
+                                    </div>
+                                    <div className="dadosProduto">
+                                        <h3>Produto A</h3>
+                                        <h3 className="fonteValor">R$10,00</h3>
+                                        <h5 className="fonteValor">Comprado em:__/__/____</h5>
+                                        <button className="botaoComprarNovamente">
+                                            Comprar novamente!
+                                        </button>
+                                    </div>
+                                </div>
+                                <div className="boxProduto">
+                                    <div className="imagemBotao">
+                                        <img className="imgUltimosComprados" src="/images/mochilaben10.png" />
+                                        <button
+                                            className="botaoFavorito"
+                                            id="mochilaben10"
+                                            onClick={() => replaceIcon(id)}
+                                        >
+                                            <FavoriteIcon fontSize="large" />
+                                        </button>
+                                    </div>
+                                    <div className="dadosProduto">
+                                        <h3>Produto A</h3>
+                                        <h3 className="fonteValor">R$10,00</h3>
+                                        <h5 className="fonteValor">Comprado em:__/__/____</h5>
+                                        <button className="botaoComprarNovamente">
+                                            Comprar novamente!
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="linha" />
+                            <h1 className="fonteDados">Favoritos:</h1>
+                            <div className="boxFavoritos">
+                                <CarrosselPerfilProdutosComprados />
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <h3>E-mail:</h3>
-                <input
-                    className="inputPerfil"
-                    type="email"
-                    placeholder="E-mail"
-                    required
-                />
-                <h3>Nome completo:</h3>
-                <input
-                    className="inputPerfil"
-                    type="nome"
-                    placeholder="Nome completo"
-                    required
-                />
-                <h3>CPF:</h3>
-                <input
-                    className="inputPerfil"
-                    type="CPF"
-                    placeholder="___.___.___ - __"
-                    required
-                />
-                <h3>Telefone:</h3>
-                <input
-                    className="inputPerfil"
-                    type="telefone"
-                    placeholder="(__) ____-____"
-                    required
-                />
-                <h3>Endereço:</h3>
-                <input
-                    className="inputPerfil"
-                    type="endereço"
-                    placeholder="Rua e número"
-                    required
-                />
-                <h3>Cidade:</h3>
-                <input
-                    className="inputPerfil"
-                    type="cidade"
-                    placeholder="Cidade"
-                    required
-                />
-                <h3>Estado:</h3>
-                <input
-                    className="inputPerfil"
-                    type="estado"
-                    placeholder="Estado"
-                    required
-                />
-                <div className="linha" />
-
-              <h1 className="fonteDados">Últimos pedidos:</h1>
-              <div className='boxUltimosPedidos'>
-                  <div className="boxProduto">
-                      <Box
-                        sx={{
-                        width: 95,
-                        height: 145,
-                        borderRadius: 5,
-                        backgroundColor: 'primary.dark','&:hover': 
-                            {
-                            backgroundColor: 'primary.main',
-                            opacity: [0.9, 0.8, 0.7],
-                            },
-                        }}
-                        />
-                        <div className="dadosProduto">
-                            <h3>Produto A</h3>
-                            <h3 className="fonteValor">R$10,00</h3>
-                            <h5 className="fonteValor">Comprado em:__/__/____</h5>
-                            <button
-                                id="buttonComprarNovamente"
-                                className="buttonsComprarNovamente"
-                                type="submit"
-                                value="submit"
-                                >
-                                Comprar novamente!
-                            </button>
-                        </div>
-                  </div>
-                  <div className="boxProduto">
-                      <Box
-                        sx={{
-                        width: 95,
-                        height: 145,
-                        borderRadius: 5,
-                        backgroundColor: 'primary.dark','&:hover': 
-                            {
-                            backgroundColor: 'primary.main',
-                            opacity: [0.9, 0.8, 0.7],
-                            },
-                        }}
-                        />
-                        <div className="dadosProduto">
-                            <h3>Produto A</h3>
-                            <h3 className="fonteValor">R$10,00</h3>
-                            <h5 className="fonteValor">Comprado em:__/__/____</h5>
-                            <button
-                                id="buttonComprarNovamente"
-                                className="buttonsComprarNovamente"
-                                type="submit"
-                                value="submit"
-                                >
-                                <h4 class="fontBotton">Comprar novamente!</h4>
-                                </button>
-                        </div>
-                  </div>
-                  <div className="boxProduto">
-                      <Box
-                        sx={{
-                        width: 95,
-                        height: 145,
-                        borderRadius: 5,
-                        backgroundColor: 'primary.dark','&:hover': 
-                            {
-                            backgroundColor: 'primary.main',
-                            opacity: [0.9, 0.8, 0.7],
-                            },
-                        }}
-                        />
-                        <div className="dadosProduto">
-                            <h3>Produto A</h3>
-                            <h3 className="fonteValor">R$10,00</h3>
-                            <h5 className="fonteValor">Comprado em:__/__/____</h5>
-                            <button
-                                id="buttonComprarNovamente"
-                                className="buttonsComprarNovamente"
-                                type="submit"
-                                value="submit"
-                                >
-                                <h4 class="fontBotton">Comprar novamente!</h4>
-                                </button>
-                        </div>
-                  </div>
-              </div>
-              
-              <div className="linha" />
-              <h1 className="fonteDados">Favoritos:</h1>
-
-            </div> 
-          </form>
-        </div>
-      </div>
-      <Footer />
-    </di>
-  );
+            </div>
+            <Footer />
+        </di>
+    );
 }
 
 
