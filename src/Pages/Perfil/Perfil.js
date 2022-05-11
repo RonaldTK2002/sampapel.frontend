@@ -74,7 +74,7 @@ function Perfil() {
                             <h1 className="fonteDados">Últimos pedidos:</h1>
                             <div className='boxUltimosPedidos'>
                                 <div className="boxProduto">
-                                    <div className="imagemBotao">
+                                    <div className="imagemUltimosPedidos">
                                         <img className="imgUltimosComprados" src="/images/mochilaben10.png" />
                                         <button
                                             className="botaoFavorito"
@@ -94,7 +94,7 @@ function Perfil() {
                                     </div>
                                 </div>
                                 <div className="boxProduto">
-                                    <div className="imagemBotao">
+                                    <div className="imagemUltimosPedidos">
                                         <img className="imgUltimosComprados" src="/images/mochilaben10.png" />
                                         <button
                                             className="botaoFavorito"
@@ -114,7 +114,7 @@ function Perfil() {
                                     </div>
                                 </div>
                                 <div className="boxProduto">
-                                    <div className="imagemBotao">
+                                    <div className="imagemUltimosPedidos">
                                         <img className="imgUltimosComprados" src="/images/mochilaben10.png" />
                                         <button
                                             className="botaoFavorito"
@@ -134,7 +134,6 @@ function Perfil() {
                                     </div>
                                 </div>
                             </div>
-
                             <div className="linha" />
                             <h1 className="fonteDados">Favoritos:</h1>
                             <div className="boxFavoritos">

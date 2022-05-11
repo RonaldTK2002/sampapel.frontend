@@ -77,19 +77,12 @@
 .boxUltimosPedidos{
     display: flex;
     flex-direction: row;
+    overflow: auto;
 }
 
 .boxProduto{
     display: flex;
     flex-direction: row;
-}
-
-.imagemBotao{
-    display: flex;
-    align-items: flex-start;
-    margin:40px auto 200px;
-    justify-content: center;
-
 }
 
 .imgUltimosComprados{
@@ -100,6 +93,14 @@
     border:none;
     background:white;
     color: lightgray;
+
+}
+
+.imagemUltimosPedidos{
+    display: flex;
+    align-items: flex-start;
+    margin:40px auto 20px;
+    justify-content: center;
 
 }
 
@@ -136,4 +137,10 @@
     border-bottom: solid 2px #3248AE;
     padding-bottom: 30px;
     width: 100%;
+}
+
+@media (max-width:1200px) {
+    .boxUltimosPedidos{
+        max-width: 400px;
+    }
 }
