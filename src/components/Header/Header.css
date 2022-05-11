@@ -39,11 +39,14 @@ header{
 .MuiMenu-list{
     background-color: #A8D5E2;
     border:black solid 2px;
-    font-family: "Inter", sans-serif;;
+    font-family: "Inter", sans-serif;
     
 }
 .menuTitle{
     font-size:25px;
     margin: 0 10px;
     
+}
+.menuCategorias{
+    margin-left:10px
 }

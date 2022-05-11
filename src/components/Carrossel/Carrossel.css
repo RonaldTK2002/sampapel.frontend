@@ -1,0 +1,42 @@
+*{
+    font-family: "Inter", sans-serif;
+}
+.img{
+    height:200px;
+}
+
+.botaoCarrossel{
+    background-color: #3248AE;
+    color:white;
+    font-weight:400;
+    font-size:16px;
+    padding:5px 30px;
+    border-radius:10px;
+    border: transparent;
+}
+.botaoCarrossel:hover{
+    transform: scale(1.01);
+    transition: 100ms;
+
+}
+.imagemBotao{
+    display: flex;
+    align-items: flex-start;
+    margin:40px auto 200px;
+    
+    justify-content: center;
+
+}
+.botaoFavorito{
+    border:none;
+    background:white;
+    color: lightgray;
+
+}
+
+.botaoFavoritado{
+    border:none;
+    background:white;
+    color:red;
+    
+}

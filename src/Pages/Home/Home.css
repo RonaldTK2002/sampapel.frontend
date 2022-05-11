@@ -1,0 +1,14 @@
+*{
+    font-family: "Inter", sans-serif;
+}
+.backgroundContainer{
+    padding:30px 0;
+}
+.tituloPrincipal{
+    font-size:23px;
+    margin:0 6%;
+}
+.carrossel{
+    border-top:#3248AE solid 2px;
+    margin:0 6%;
+}

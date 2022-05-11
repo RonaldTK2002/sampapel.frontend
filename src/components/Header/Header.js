@@ -30,6 +30,7 @@ function Header() {
         <button onClick={handleOpen} className="headerButtons">
           <MenuOutlinedIcon fontSize="large" />
         </button>
+        
         <Menu className="menuHeader"
           anchorOrigin={{
             vertical:70,
@@ -38,11 +39,13 @@ function Header() {
           open={menu}
           onClose={handleClose}
         >
-          <h1 className='menuTitle'>Produtos</h1>
-          <MenuItem>Categoria A</MenuItem>
-          <MenuItem>Categoria B</MenuItem>
-          <MenuItem>Categoria C</MenuItem>
+          <MenuItem><h1 className='menuTitle'>Produtos</h1></MenuItem>
+          <MenuItem><p className = 'menuCategorias'>Categoria A</p></MenuItem>
+          <MenuItem><p className = 'menuCategorias'>Categoria B</p></MenuItem>
+          <MenuItem><p className = 'menuCategorias'>Categoria C</p></MenuItem>
         </Menu>
+        
+        
         <button className="heart">
           <FavoriteBorderOutlinedIcon fontSize="large" />
         </button>
@@ -52,7 +55,7 @@ function Header() {
         <button className="headerButtons">
           <ShoppingCartOutlinedIcon fontSize="large" />
         </button>
-        <button className="headerButtons">
+        <button onClick = {()=> window.location.href = 'perfil'} className="headerButtons">
           <AccountCircleOutlinedIcon fontSize="large" />
         </button>
       </div>
