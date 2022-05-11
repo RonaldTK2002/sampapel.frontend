@@ -14,6 +14,9 @@ function Header() {
     else alert('Antes de prosseguir, efetue o login/cadastro')
   }
   const [menu, setMenu] = useState(false);
+  function pushPerfil() {
+    window.location.href = "/perfil";
+  }
   function handleOpen() {
     if(window.location.href !== "http://localhost:3000/login" && window.location.href !== 'http://localhost:3000/cadastro' ){
       setMenu(true);
@@ -55,7 +58,7 @@ function Header() {
         <button className="headerButtons">
           <ShoppingCartOutlinedIcon fontSize="large" />
         </button>
-        <button onClick = {()=> window.location.href = 'perfil'} className="headerButtons">
+        <button className="headerButtons" onClick={pushPerfil}>
           <AccountCircleOutlinedIcon fontSize="large" />
         </button>
       </div>
