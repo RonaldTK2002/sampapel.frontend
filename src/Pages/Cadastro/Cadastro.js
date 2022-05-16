@@ -1,108 +1,118 @@
-import { Link } from "@mui/material";
+import { Link, Typography } from "@mui/material";
 import React from "react";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import "./Cadastro.css";
 
 function Cadastro() {
+
+  const dadosPessoaisCadastro =
+    [
+      {
+        title: "Nome completo:",
+        type: "nome",
+        placeholder: "Nome completo",
+      },
+      {
+        title: "CPF:",
+        type: "CPF",
+        placeholder: "___.___.___ - __",
+      },
+      {
+        title: "CEP:",
+        type: "CEP",
+        placeholder: "__-___.___",
+      }, {
+        title: "Endereço:",
+        type: "endereco",
+        placeholder: "Rua e número",
+      }, {
+        title: "Cidade:",
+        type: "cidade",
+        placeholder: "Cidade",
+      }, {
+        title: "Estado:",
+        type: "estado",
+        placeholder: "Estado",
+      },
+      {
+        title: "Data de nascimento:",
+        type: "dataDeNascimento",
+        placeholder: "__ /__ / ____",
+      },
+      {
+        title: "Telefone:",
+        type: "telefone",
+        placeholder: "(__) ____-____",
+      },
+    ];
+
+  const dadosLogin =
+    [
+      {
+        title: "E-mail:",
+        type: "email",
+        placeholder: "E-mail",
+      },
+      {
+        title: "Crie uma senha:",
+        type: "password",
+        placeholder: "Senha",
+      },
+      {
+        title: "Confirme sua senha:",
+        type: "password",
+        placeholder: "Senha",
+      },
+    ];
+
   return (
     <di>
       <Header />
 
-      <div className="backgroundLogin">
-        <div className="loginContainer">
+      <div className="backgroundCadastro">
+        <div className="cadastroContainer">
           <div className="linhaCadastro">
-            <h1 className="loginTitle">Crie seu cadastro!</h1>
+            <h1 className="cadastroTitle">Crie seu cadastro!</h1>
           </div>
-          <form className="inputsPaginaLogin">
-            <div className="loginInputContainer">
+          <form className="inputsPaginaCadastro">
+            <div className="cadastroInputContainer">
               <div className="dados">
                 <h1 className="fonteDados">Dados pessoais:</h1>
               </div>
-              <h3>Nome completo:</h3>
-              <input
-                className="inputLogin"
-                type="nome"
-                placeholder="Nome completo"
-                required
-              />
-              <h3>CPF:</h3>
-              <input
-                className="inputLogin"
-                type="CPF"
-                placeholder="___.___.___ - __"
-                required
-              />
-              <h3>CEP:</h3>
-              <input
-                className="inputLogin"
-                type="CEP"
-                placeholder="__-___.___"
-                required
-              />
-              <h3>Endereço:</h3>
-              <input
-                className="inputLogin"
-                type="endereço"
-                placeholder="Rua e número"
-                required
-              />
-              <h3>Cidade:</h3>
-              <input
-                className="inputLogin"
-                type="cidade"
-                placeholder="Cidade"
-                required
-              />
-              <h3>Estado:</h3>
-              <input
-                className="inputLogin"
-                type="estado"
-                placeholder="Estado"
-                required
-              />
-              <h3>Data de nascimento:</h3>
-              <input
-                className="inputLogin"
-                type="dataDeNascimento"
-                placeholder="__ /__ / ____"
-                required
-              />
-              <h3>Telefone:</h3>
-              <input
-                className="inputLogin"
-                type="telefone"
-                placeholder="(__) ____-____"
-                required
-              />
-              <div className="linha" />
+              {dadosPessoaisCadastro.map((dadosP) => {
+                return (
+                  <div>
+                    <Typography variant="h5">{dadosP.title}</Typography>
+                    <input
+                      className="inputCadastro"
+                      type={dadosP.type}
+                      placeholder={dadosP.placeholder}
+                      required
+                    />
+                  </div>
+                );
+              })}
+              <div className="linhaDadosLogin" />
               <h1 className="fonteDados">Dados de Login:</h1>
-              <h3>E-mail:</h3>
-              <input
-                className="inputLogin"
-                type="email"
-                placeholder="E-mail"
-                required
-              />
-              <h3>Crie uma senha:</h3>
-              <input
-                className="inputLogin"
-                type="password"
-                placeholder="Senha"
-                required
-              />
-              <h3>Confirme sua senha:</h3>
-              <input
-                className="inputLogin"
-                type="password"
-                placeholder="Senha"
-                required
-              />
+              {dadosLogin.map((dadosL) => {
+                return (
+                  <div>
+                    <Typography variant="h5">{dadosL.title}</Typography>
+                    <input
+                      className="inputCadastro"
+                      type={dadosL.type}
+                      placeholder={dadosL.placeholder}
+                      required
+                    />
+                  </div>
+                );
+              })}
             </div>
-            <div className="loginButtonContainer">
+            <div className="cadastroButtonContainer">
               <button
-                id="buttonLogin"
-                className="buttonsLogin"
+                id="buttonPaginaCadastro"
+                className="buttonsPaginaCadastro"
                 type="submit"
                 value="submit"
               >
