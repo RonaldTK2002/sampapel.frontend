@@ -6,27 +6,29 @@ import CarrosselUm from "../../components/Carrossel/CarrosselUm";
 import CarrosselDois from "../../components/Carrossel/CarrosselDois";
 import CarrosselTres from "../../components/Carrossel/CarrosselTres";
 
-
-function Home(){
-  
+function Home() {
   return (
     <div>
       <Header />
+<div className = 'blockCarrossel'></div>
       <div className="backgroundContainer">
         <div className="container">
-          <h1 className = 'tituloPrincipal'>Destaques:</h1>
+          <h1 className="tituloPrincipal">Destaques:</h1>
           <div className="carrossel">
-           <CarrosselUm/>
+            <CarrosselUm />
           </div>
         </div>
         <div className="container">
-          <h1 className = 'tituloPrincipal'>Novidades:</h1>
-          <div className="carrossel"><CarrosselDois/></div>
+          <h1 className="tituloPrincipal">Novidades:</h1>
+          <div className="carrossel">
+            <CarrosselDois />
+          </div>
         </div>
         <div className="container">
-          <h1 className = 'tituloPrincipal'>Favoritos:</h1>
-          <div className="carrossel"><CarrosselTres/></div>
-
+          <h1 className="tituloPrincipal">Favoritos:</h1>
+          <div className="carrossel">
+            <CarrosselTres />
+          </div>
         </div>
       </div>
 

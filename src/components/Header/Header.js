@@ -6,23 +6,22 @@ import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlin
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
+
 function Header() {
   function pushHome() {
-    if (window.location.href !== "http://localhost:3000/login" && 'http://localhost:3000/cadastro') {
-      window.location.href = "home";
-    }
-    else alert('Antes de prosseguir, efetue o login/cadastro')
+    window.location.href = "home";
   }
   const [menu, setMenu] = useState(false);
   function pushPerfil() {
     window.location.href = "/perfil";
   }
   function handleOpen() {
-    if(window.location.href !== "http://localhost:3000/login" && window.location.href !== 'http://localhost:3000/cadastro' ){
+    if (
+      window.location.href !== "http://localhost:3000/login" &&
+      window.location.href !== "http://localhost:3000/cadastro"
+    ) {
       setMenu(true);
-    }
-    else alert('Antes de prosseguir, efetue o login/cadastro')
-    
+    } else alert("Antes de prosseguir, efetue o login/cadastro");
   }
   function handleClose() {
     setMenu(false);
@@ -33,22 +32,30 @@ function Header() {
         <button onClick={handleOpen} className="headerButtons">
           <MenuOutlinedIcon fontSize="large" />
         </button>
-        
-        <Menu className="menuHeader"
+
+        <Menu
+          className="menuHeader"
           anchorOrigin={{
-            vertical:70,
-            horizontal:210,
+            vertical: 70,
+            horizontal: 210,
           }}
           open={menu}
           onClose={handleClose}
         >
-          <MenuItem><h1 className='menuTitle'>Produtos</h1></MenuItem>
-          <MenuItem><p className = 'menuCategorias'>Categoria A</p></MenuItem>
-          <MenuItem><p className = 'menuCategorias'>Categoria B</p></MenuItem>
-          <MenuItem><p className = 'menuCategorias'>Categoria C</p></MenuItem>
+          <MenuItem>
+            <h1 className="menuTitle">Produtos</h1>
+          </MenuItem>
+          <MenuItem>
+            <p className="menuCategorias">Categoria A</p>
+          </MenuItem>
+          <MenuItem>
+            <p className="menuCategorias">Categoria B</p>
+          </MenuItem>
+          <MenuItem>
+            <p className="menuCategorias">Categoria C</p>
+          </MenuItem>
         </Menu>
-        
-        
+
         <button className="heart">
           <FavoriteBorderOutlinedIcon fontSize="large" />
         </button>

@@ -1,0 +1,29 @@
+* {
+  font-family: "Inter", sans-serif;
+}
+.backgroundContainerProdutos {
+  padding: 30px 0;
+  
+}
+.tituloPrincipalProdutos {
+  font-size: 23px;
+  margin: 0 6%;
+  border-bottom: #3248ae solid 2px;
+  padding-bottom: 5px;
+  
+
+}
+.containerProdutos {
+  box-sizing: border-box;
+  margin: 0 6%;
+  
+  
+}
+.produtosGridBox{
+    list-style: none;
+    display:grid;
+    grid-template-columns: 100px 50px 100px;
+    grid-template-rows: 80px auto 80px; 
+    column-gap: 10px;
+    row-gap: 15px;
+}

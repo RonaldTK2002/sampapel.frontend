@@ -18,8 +18,18 @@ function CarrosselUm() {
     }
   }
   const produtosDestaque = [
-    new ProdutoDestaque("Borracha Mercur", "2,00", "/images/borracha.png", "borrachamercur"),
-    new ProdutoDestaque("Lápis", "7,50", "images/lapis.png", "lapisfabercastell"),
+    new ProdutoDestaque(
+      "Borracha Mercur",
+      "2,00",
+      "/images/borracha.png",
+      "borrachamercur"
+    ),
+    new ProdutoDestaque(
+      "Lápis",
+      "7,50",
+      "images/lapis.png",
+      "lapisfabercastell"
+    ),
   ];
   return (
     <Carousel variant="dark">
