@@ -1,5 +1,5 @@
-.backgroundPerfil{
-    display:flex;
+.backgroundPerfil {
+    display: flex;
     align-content: center;
     justify-content: center;
     font-family: "Inter", sans-serif;
@@ -8,139 +8,180 @@
     margin-bottom: 100px;
 }
 
-.perfilContainer{
+.perfilContainer {
     border: solid #3248AE 5px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border-radius:40px;
+    border-radius: 40px;
     max-width: 1000px;
     width: 75%;
 }
 
-.linhaPerfil{
+.linhaPerfil {
     border-bottom: solid 2px #3248AE;
     margin: 10px;
     width: 80%;
 }
 
-.perfilTitle{
+.perfilTitle {
     display: flex;
     justify-content: center;
-    font-weight:800;
-    font-size:50px;
+    font-weight: 800;
+    font-size: 50px;
     padding: 0 100px;
 }
 
-.inputsPaginaPerfil{
+.inputsPaginaPerfil {
     display: flex;
     justify-content: center;
 }
 
-.perfilInputContainer{
-    display:flex;
+.perfilInputContainer {
+    display: flex;
     max-width: 800px;
-    flex-direction:column;
-    row-gap:20px;
-    margin-bottom:15px;
+    flex-direction: column;
+    row-gap: 20px;
+    margin-bottom: 15px;
 }
 
-.dados{
-    width:400px;
+.dados {
+    width: 400px;
 }
 
-.fonteDados{
-    font-weight:500;
-    font-size:30px;
+.fonteDados {
+    font-weight: 500;
+    font-size: 30px;
 }
 
-.dadosValor{
+.dadosValor {
     display: flex;
     align-items: center;
     margin: 15px;
     height: 45px;
     max-width: 500px;
     background-color: #e0e0e0;
-    border-radius: 40px;
+    border-radius: 50px;
 }
 
-.inputPerfil{
+.inputPerfil {
     background-color: #DCDCDC;
-    padding:10px 10px;
+    padding: 10px 10px;
     border: transparent;
-    border-radius:50px;
-    max-width:500px;
+    border-radius: 50px;
+    max-width: 500px;
     font-size: 16px;
 }
 
-.boxUltimosPedidos{
+.boxUltimosPedidos {
     display: flex;
     flex-direction: row;
     overflow: auto;
 }
 
-.boxProduto{
+.boxFavoritos {
     display: flex;
     flex-direction: row;
+    overflow: auto;
 }
 
-.imgUltimosComprados{
-    height:200px;
+.boxProduto {
+    min-width: 400px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 20px;
 }
 
-.botaoFavorito{
-    border:none;
-    background:white;
+.imgUltimosComprados {
+    height: 200px;
+}
+
+.imgFavoritos {
+    height: 200px;
+}
+
+.botaoFavorito {
+    border: none;
+    background: white;
     color: lightgray;
 
 }
 
-.imagemUltimosPedidos{
+.imagemUltimosPedidos {
     display: flex;
     align-items: flex-start;
-    margin:40px auto 20px;
+    margin: 40px auto 20px;
     justify-content: center;
 
 }
 
-.botaoFavoritado{
-    border:none;
-    background:white;
-    color:red;
-    
+.imagemFavoritos {
+    display: flex;
+    align-items: flex-start;
+    margin: 40px auto 20px;
+    justify-content: center;
+
 }
 
-.dadosProduto{
+.botaoFavoritado {
+    border: none;
+    background: white;
+    color: red;
+
+}
+
+.dadosProduto {
     margin: 15px;
 }
 
-.fonteValor{
+.fonteValor {
     font-weight: 300;
 }
 
-.botaoComprarNovamente{
+.botaoComprarNovamente {
     background-color: #3248AE;
-    color:white;
-    font-weight:400;
-    font-size:14px;
-    padding:5px 30px;
-    border-radius:10px;
+    color: white;
+    font-weight: 400;
+    font-size: 14px;
+    padding: 5px 30px;
+    border-radius: 10px;
     border: transparent;
 }
-.botaoComprarNovamente:hover{
+
+.botaoComprarNovamente:hover {
     transform: scale(1.01);
     transition: 100ms;
 }
 
-.linha{
+.botaoComprar {
+    background-color: #3248AE;
+    color: white;
+    font-weight: 400;
+    font-size: 14px;
+    padding: 5px 30px;
+    border-radius: 10px;
+    border: transparent;
+}
+
+.botaoComprar:hover {
+    transform: scale(1.01);
+    transition: 100ms;
+}
+
+.linha {
     border-bottom: solid 2px #3248AE;
     padding-bottom: 30px;
     width: 100%;
 }
 
 @media (max-width:1200px) {
-    .boxUltimosPedidos{
+    .boxUltimosPedidos {
+        max-width: 400px;
+    }
+
+    .boxFavoritos {
         max-width: 400px;
     }
 }

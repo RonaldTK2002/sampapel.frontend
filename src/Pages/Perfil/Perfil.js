@@ -4,8 +4,6 @@ import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import { Typography } from '@mui/material';
-import CarrosselPerfilProdutosComprados from '../../components/Carrossel/CarrosselPerfilProdutosComprados';
-
 
 function Perfil() {
 
@@ -47,7 +45,67 @@ function Perfil() {
             },
         ];
 
+    const boxUltimosPedidos =
+        [
+            {
+                src: '/images/mochilaben10.png',
+                id: "mochilaben10",
+                nome: "Mochila Ben 10",
+                valor: "150,00",
+                dia: 3,
+                mes: 1,
+                ano: 2022,
+            },
+            {
+                src: '/images/lapis.png',
+                id: "lapisfabercastell",
+                nome: "Lápis",
+                valor: "7,50",
+                dia: 2,
+                mes: 1,
+                ano: 2022,
+            },
+            {
+                src: '/images/borracha.png',
+                id: "borrachamercur",
+                nome: "Borracha",
+                valor: "2,00",
+                dia: 1,
+                mes: 1,
+                ano: 2022,
+            },
+            {
+                src: '/images/cadernosurf.png',
+                id: "cadernosurf",
+                nome: "Caderno Surf D+",
+                valor: "35,50",
+                dia: 31,
+                mes: 12,
+                ano: 2021,
+            },
+        ];
 
+        const boxFavoritos =
+        [
+            {
+                src: '/images/mochilaben10.png',
+                id: "mochilaben10",
+                nome: "Mochila Ben 10",
+                valor: "150,00",
+            },
+            {
+                src: '/images/lapis.png',
+                id: "lapisfabercastell",
+                nome: "Lápis",
+                valor: "7,50",
+            },
+            {
+                src: '/images/cadernosurf.png',
+                id: "cadernosurf",
+                nome: "Caderno Surf D+",
+                valor: "35,50",
+            },
+        ];
 
     return (
         <di>
@@ -73,71 +131,55 @@ function Perfil() {
                             <div className="linha" />
                             <h1 className="fonteDados">Últimos pedidos:</h1>
                             <div className='boxUltimosPedidos'>
-                                <div className="boxProduto">
-                                    <div className="imagemUltimosPedidos">
-                                        <img className="imgUltimosComprados" src="/images/mochilaben10.png" />
-                                        <button
-                                            className="botaoFavorito"
-                                            id="mochilaben10"
-                                            onClick={() => replaceIcon(id)}
-                                        >
-                                            <FavoriteIcon fontSize="large" />
-                                        </button>
-                                    </div>
-                                    <div className="dadosProduto">
-                                        <h3>Produto A</h3>
-                                        <h3 className="fonteValor">R$10,00</h3>
-                                        <h5 className="fonteValor">Comprado em:__/__/____</h5>
-                                        <button className="botaoComprarNovamente">
-                                            Comprar novamente!
-                                        </button>
-                                    </div>
-                                </div>
-                                <div className="boxProduto">
-                                    <div className="imagemUltimosPedidos">
-                                        <img className="imgUltimosComprados" src="/images/mochilaben10.png" />
-                                        <button
-                                            className="botaoFavorito"
-                                            id="mochilaben10"
-                                            onClick={() => replaceIcon(id)}
-                                        >
-                                            <FavoriteIcon fontSize="large" />
-                                        </button>
-                                    </div>
-                                    <div className="dadosProduto">
-                                        <h3>Produto A</h3>
-                                        <h3 className="fonteValor">R$10,00</h3>
-                                        <h5 className="fonteValor">Comprado em:__/__/____</h5>
-                                        <button className="botaoComprarNovamente">
-                                            Comprar novamente!
-                                        </button>
-                                    </div>
-                                </div>
-                                <div className="boxProduto">
-                                    <div className="imagemUltimosPedidos">
-                                        <img className="imgUltimosComprados" src="/images/mochilaben10.png" />
-                                        <button
-                                            className="botaoFavorito"
-                                            id="mochilaben10"
-                                            onClick={() => replaceIcon(id)}
-                                        >
-                                            <FavoriteIcon fontSize="large" />
-                                        </button>
-                                    </div>
-                                    <div className="dadosProduto">
-                                        <h3>Produto A</h3>
-                                        <h3 className="fonteValor">R$10,00</h3>
-                                        <h5 className="fonteValor">Comprado em:__/__/____</h5>
-                                        <button className="botaoComprarNovamente">
-                                            Comprar novamente!
-                                        </button>
-                                    </div>
-                                </div>
+                                {boxUltimosPedidos.map((ultimosPedidos) => {
+                                    return (
+                                        <div className="boxProduto">
+                                            <div className="imagemUltimosPedidos">
+                                                <img className="imgUltimosComprados" src={ultimosPedidos.src} />
+                                                <button
+                                                    className="botaoFavorito"
+                                                    id={ultimosPedidos.id}
+                                                    onClick={() => replaceIcon(ultimosPedidos.id)}
+                                                >
+                                                    <FavoriteIcon fontSize="large" />
+                                                </button>
+                                            </div>
+                                            <div className="dadosProduto">
+                                                <h3>{ultimosPedidos.nome}</h3>
+                                                <h4 className="fonteValor">R${ultimosPedidos.valor}</h4>
+                                                <h6 className="fonteValor">Comprado em: {ultimosPedidos.dia}/{ultimosPedidos.mes}/{ultimosPedidos.ano}</h6>
+                                                <button className="botaoComprarNovamente">
+                                                    Comprar novamente!
+                                                </button>
+                                            </div>
+                                        </div>
+                                    );
+                                })}
                             </div>
                             <div className="linha" />
                             <h1 className="fonteDados">Favoritos:</h1>
-                            <div className="boxFavoritos">
-                                <CarrosselPerfilProdutosComprados />
+                            <div className='boxFavoritos'>
+                            {boxFavoritos.map((pedidosFavoritos) => {
+                                    return (
+                                        <div className="boxProduto">
+                                            <div className="imagemUltimosPedidos">
+                                                <img className="imgUltimosComprados" src={pedidosFavoritos.src} />
+                                                <button
+                                                    className="botaoFavoritado"
+                                                >
+                                                    <FavoriteIcon fontSize="large" />
+                                                </button>
+                                            </div>
+                                            <div className="dadosProduto">
+                                                <h3>{pedidosFavoritos.nome}</h3>
+                                                <h4 className="fonteValor">R${pedidosFavoritos.valor}</h4>
+                                                <button className="botaoComprar">
+                                                    Comprar!
+                                                </button>
+                                            </div>
+                                        </div>
+                                    );
+                                })}
                             </div>
                         </div>
                     </div>
