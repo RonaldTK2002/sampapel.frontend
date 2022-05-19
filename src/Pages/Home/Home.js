@@ -9,25 +9,33 @@ import CarrosselTres from "../../components/Carrossel/CarrosselTres";
 function Home() {
   return (
     <div>
+      <div className="header">
       <Header />
-<div className = 'blockCarrossel'></div>
+      </div>
+      <div className = "blockContainer">
+
+      </div>
+
       <div className="backgroundContainer">
-        <div className="container">
-          <h1 className="tituloPrincipal">Destaques:</h1>
-          <div className="carrossel">
-            <CarrosselUm />
+        <div className="blockHeader">
+          <div className="container">
+            <h1 className="tituloPrincipal">Destaques:</h1>
+
+            <div className="carrossel">
+              <CarrosselUm />
+            </div>
           </div>
-        </div>
-        <div className="container">
-          <h1 className="tituloPrincipal">Novidades:</h1>
-          <div className="carrossel">
-            <CarrosselDois />
+          <div className="container">
+            <h1 className="tituloPrincipal">Novidades:</h1>
+            <div className="carrossel">
+              <CarrosselDois />
+            </div>
           </div>
-        </div>
-        <div className="container">
-          <h1 className="tituloPrincipal">Favoritos:</h1>
-          <div className="carrossel">
-            <CarrosselTres />
+          <div className="container">
+            <h1 className="tituloPrincipal">Favoritos:</h1>
+            <div className="carrossel">
+              <CarrosselTres />
+            </div>
           </div>
         </div>
       </div>

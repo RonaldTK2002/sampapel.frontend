@@ -9,22 +9,25 @@ import MenuItem from "@mui/material/MenuItem";
 
 function Header() {
   function pushHome() {
-    window.location.href = "home";
+    window.location.href = "http://localhost:3000/home";
   }
   const [menu, setMenu] = useState(false);
+  const [anchorEl,setAnchorEl] = useState(false);
   function pushPerfil() {
-    window.location.href = "/perfil";
+    window.location.href = "http://localhost:3000/perfil";
   }
-  function handleOpen() {
-    if (
-      window.location.href !== "http://localhost:3000/login" &&
-      window.location.href !== "http://localhost:3000/cadastro"
-    ) {
+  function handleOpen(event) {
+ 
       setMenu(true);
-    } else alert("Antes de prosseguir, efetue o login/cadastro");
+      setAnchorEl(event.currentTarget)
+
   }
   function handleClose() {
     setMenu(false);
+  }
+  function linkMenu(link){
+    window.location.href = link;
+    setMenu(false)
   }
   return (
     <header>
@@ -35,28 +38,26 @@ function Header() {
 
         <Menu
           className="menuHeader"
-          anchorOrigin={{
-            vertical: 70,
-            horizontal: 210,
-          }}
+          anchorEl={anchorEl}
           open={menu}
           onClose={handleClose}
         >
-          <MenuItem>
+          <MenuItem onClick={()=>window.location.href = '/produtos'}>
             <h1 className="menuTitle">Produtos</h1>
           </MenuItem>
-          <MenuItem>
-            <p className="menuCategorias">Categoria A</p>
+          <MenuItem onClick = {()=>linkMenu( '/produtos')}>
+            <p className="menuCategorias">Material escolar</p>
           </MenuItem>
-          <MenuItem>
-            <p className="menuCategorias">Categoria B</p>
+          <MenuItem onClick={()=>linkMenu( '/produtos#escritorioAnchor')}>
+            <p className="menuCategorias">Produtos de escritório</p>
           </MenuItem>
-          <MenuItem>
-            <p className="menuCategorias">Categoria C</p>
+          <MenuItem onClick={()=>linkMenu('/produtos#eletronicosAnchor')}>
+            <p className="menuCategorias">Produtos Eletrônicos</p>
           </MenuItem>
+          
         </Menu>
 
-        <button className="heart">
+        <button className="heart" onClick = {()=>linkMenu('/produtos#favoritos')}>
           <FavoriteBorderOutlinedIcon fontSize="large" />
         </button>
         <button className="headerButtons" onClick={pushHome}>

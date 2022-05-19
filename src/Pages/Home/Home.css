@@ -25,3 +25,12 @@
   margin: 0 6%;
   
 }
+.blockHeader{
+  height:50%;
+  display:flex;
+  flex-direction: column;
+}
+.header{
+  
+  
+}
