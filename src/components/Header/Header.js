@@ -53,6 +53,9 @@ function Header() {
           open={menu}
           onClose={handleClose}
         >
+          <MenuItem onClick={() => window.location.href = '/login'}>
+            <h1 className="menuTitle">Login</h1>
+          </MenuItem>
           <MenuItem onClick={() => window.location.href = '/produtos'}>
             <h1 className="menuTitle">Produtos</h1>
           </MenuItem>
