@@ -77,13 +77,13 @@ function Cadastro() {
           </div>
           <form className="inputsPaginaCadastro">
             <div className="cadastroInputContainer">
-              <div className="dados">
-                <h1 className="fonteDados">Dados pessoais:</h1>
+              <div className="dadosCadastro">
+                <h1 className="fonteDadosCadastro">Dados pessoais:</h1>
               </div>
               {dadosPessoaisCadastro.map((dadosP) => {
                 return (
                   <div>
-                    <Typography variant="h5">{dadosP.title}</Typography>
+                    <h5 className="fonteDadosInput">{dadosP.title}</h5>
                     <input
                       className="inputCadastro"
                       type={dadosP.type}
@@ -94,11 +94,11 @@ function Cadastro() {
                 );
               })}
               <div className="linhaDadosLogin" />
-              <h1 className="fonteDados">Dados de Login:</h1>
+              <h1 className="fonteDadosCadastro">Dados de Login:</h1>
               {dadosLogin.map((dadosL) => {
                 return (
                   <div>
-                    <Typography variant="h5">{dadosL.title}</Typography>
+                    <h5 className="fonteDadosInput">{dadosL.title}</h5>
                     <input
                       className="inputCadastro"
                       type={dadosL.type}
@@ -127,7 +127,7 @@ function Cadastro() {
                 window.location.href = "/login";
               }}
             >
-              Já possui cadastro? Login
+              <div className="jaCadastro">Já possui cadastro? Login</div>
             </Link>
           </form>
         </div>

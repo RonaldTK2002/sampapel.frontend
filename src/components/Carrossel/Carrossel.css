@@ -36,3 +36,11 @@
   background: white;
   color: red;
 }
+@media (max-width:500px){
+  .img {
+    height: 130px;
+  }
+  .botaoCarrossel {
+    font-size: 12px;
+  }
+}

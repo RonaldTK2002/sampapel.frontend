@@ -117,19 +117,19 @@ function Perfil() {
                     </div>
                     <div className="inputsPaginaPerfil">
                         <div className="perfilInputContainer">
-                            <div className="dados">
-                                <h2 className="fonteDados">Dados pessoais:</h2>
+                            <div className="dadosPerfil">
+                                <h2 className="fonteDadosPerfil">Dados pessoais:</h2>
                             </div>
                             {dadosPessoais.map((dados) => {
                                 return (
                                     <div>
-                                        <Typography variant="h5">{dados.title}</Typography>
-                                        <div className="dadosValor"><Typography variant="h6" marginLeft={"25px"}>{dados.value}</Typography></div>
+                                        <h5 className="fonteDadosInput">{dados.title}</h5>
+                                        <div className="dadosValor"><h6 className="fonteDadosValor">{dados.value}</h6></div>
                                     </div>
                                 );
                             })}
                             <div className="linha" />
-                            <h1 className="fonteDados">Últimos pedidos:</h1>
+                            <h1 className="fonteDadosPerfil">Últimos pedidos:</h1>
                             <div className='boxUltimosPedidos'>
                                 {boxUltimosPedidos.map((ultimosPedidos) => {
                                     return (
@@ -145,7 +145,7 @@ function Perfil() {
                                                 </button>
                                             </div>
                                             <div className="dadosProduto">
-                                                <h3>{ultimosPedidos.nome}</h3>
+                                                <h3 className='fonteNome'>{ultimosPedidos.nome}</h3>
                                                 <h4 className="fonteValor">R${ultimosPedidos.valor}</h4>
                                                 <h6 className="fonteValor">Comprado em: {ultimosPedidos.dia}/{ultimosPedidos.mes}/{ultimosPedidos.ano}</h6>
                                                 <button className="botaoComprarNovamente">
@@ -171,7 +171,7 @@ function Perfil() {
                                                 </button>
                                             </div>
                                             <div className="dadosProduto">
-                                                <h3>{pedidosFavoritos.nome}</h3>
+                                                <h3  className='fonteNome'>{pedidosFavoritos.nome}</h3>
                                                 <h4 className="fonteValor">R${pedidosFavoritos.valor}</h4>
                                                 <button className="botaoComprar">
                                                     Comprar!

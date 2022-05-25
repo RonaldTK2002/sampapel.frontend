@@ -63,8 +63,8 @@ function Produtos() {
                   >
                     <FavoriteIcon fontSize="large" />
                   </button>
-                  <h3>{produtos["nome"]}</h3>
-                  <p>{produtos["preço"]}</p>
+                  <h3 className='produtoNomePrrodutos'>{produtos["nome"]}</h3>
+                  <p className='preçoProdutos'>{produtos["preço"]}</p>
                   <a  id = 'escritorioAnchor'></a>
                   <button className="botaoCarrossel">Comprar</button>
                 </li>

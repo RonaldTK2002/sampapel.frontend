@@ -46,13 +46,16 @@
     margin-bottom: 15px;
 }
 
-.dados {
+.dadosPerfil {
     width: 400px;
 }
 
-.fonteDados {
+.fonteDadosPerfil {
     font-weight: 500;
-    font-size: 30px;
+    font-size: 40px;
+}
+.fonteDadosInput{
+    font-size: 25px
 }
 
 .dadosValor {
@@ -74,6 +77,11 @@
     font-size: 16px;
 }
 
+.fonteDadosValor{
+    margin-left: 15px;
+    font-size: 16px;
+}
+
 .boxUltimosPedidos {
     display: flex;
     flex-direction: row;
@@ -87,7 +95,6 @@
 }
 
 .boxProduto {
-    min-width: 400px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -96,6 +103,9 @@
 
 .imgUltimosComprados {
     height: 200px;
+}
+.fonteNome{
+    font-size: 25px;
 }
 
 .imgFavoritos {
@@ -138,6 +148,7 @@
 
 .fonteValor {
     font-weight: 300;
+    font-size: 22px;
 }
 
 .botaoComprarNovamente {
@@ -183,5 +194,67 @@
 
     .boxFavoritos {
         max-width: 400px;
+    }
+}
+@media (max-width:800px){
+    .dadosPerfil {
+        width: 300px;
+    }
+    .dadosValor{
+        width: 300px;
+    }
+    .perfilTitle {
+        font-size: 35px;
+    }
+    .fonteDadosPerfil {
+        font-size: 30px;
+    }
+    .fonteDadosInput{
+        font-size: 20px
+    }
+    .fonteDadosValor{
+        font-size: 13px;
+    }
+    .imgUltimosComprados{
+        height: 150px;
+    }
+    .fonteNome{
+        font-size: 20px;
+    }
+    .fonteValor {
+        font-size: 20px;
+    }
+    .botaoComprarNovamente{
+        font-size: 13px;
+    }
+    .botaoComprar{
+        font-size: 13px;
+    }
+}
+@media (max-width:650px){
+    .dadosPerfil {
+        width: 200px;
+    }
+    .perfilInputContainer{
+        justify-content: center;
+        align-items: center;
+    }
+    .imgUltimosComprados{
+        height: 80px;
+    }
+    .dadosValor{
+        width: 200px;
+    }
+    .boxProduto{
+        width: 200px;
+    }
+    .boxUltimosPedidos{
+        width: 200px;
+    }
+    .boxFavoritos{
+        width: 200px;
+    }
+    .linha{
+        width: 200px;
     }
 }

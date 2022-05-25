@@ -30,7 +30,8 @@
   display:flex;
   flex-direction: column;
 }
-.header{
-  
-  
+@media (max-width: 500px){
+  .tituloPrincipal {
+    font-size: 18px;
+  }
 }

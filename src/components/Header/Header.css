@@ -50,3 +50,19 @@ header {
 .menuCategorias {
   margin-left: 10px;
 }
+
+@media (max-width:800px){
+  .logoHeader {
+    width: 150px;
+  }
+}
+@media (max-width:500px){
+  .logoHeader {
+    width: 100px;
+  }
+}
+@media (max-width:500px){
+  .logoHeader {
+    width: 90px;
+  }
+}
