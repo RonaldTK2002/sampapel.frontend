@@ -2,9 +2,22 @@ import React from "react";
 import "./Login.css";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
-
+import api from "../../services/api";
 
 function Login() {
+
+  async function login(e) 
+  {
+    e.preventDefault();
+    try {
+      const response = await api.post('/login', {email, password});
+      alert("Bem vindo! " + response.data.user.name);
+      window.location.href = "/perfil";
+    } catch (error) {
+      console.warn(error);
+      alert(error.message);
+    }
+  };
 
   return (
     <div>
@@ -34,6 +47,7 @@ function Login() {
                 className="buttonsLogin"
                 type="submit"
                 value="submit"
+                onClick={login}
               >
                 Login
               </button>
@@ -42,7 +56,7 @@ function Login() {
                 className="buttonsLogin"
                 type="button"
                 value="cadastro"
-                onClick={() => (window.location.href = "cadastro")}
+                onClick={() => {window.location.href = "cadastro"}}
               >
                 Cadastre-se
               </button>
