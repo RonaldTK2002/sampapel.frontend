@@ -5,6 +5,20 @@ import Home from "./Pages/Home";
 import Cadastro from "./Pages/Cadastro";
 import Perfil from "./Pages/Perfil";
 import Produtos from "./Pages/Produtos";
+import { isAuthenticated } from "./services/auth";
+
+const PrivateRoute = ({ component: Component, ...rest }) => (
+  <Route
+    {...rest}
+    render={(props) =>
+      isAuthenticated() ? (
+        <Component {...props} />
+      ) : (
+        <Redirect to={{ pathname: "/login", state: { from: props.location } }} />
+      )
+    }
+  />
+);
 
 function Routes() {
   return (
@@ -13,8 +27,8 @@ function Routes() {
         <Route path="/cadastro" component={Cadastro} />
         <Route path="/login" component={Login} />
         <Route path="/home" component={Home} />
-        <Route path="/perfil" component={Perfil} />
-        <Route path = '/produtos' component = {Produtos}/>
+        <PrivateRoute path="/perfil" component={Perfil} />
+        <PrivateRoute path="/produtos" component={Produtos} />
         <Route path="/" component={() => <Redirect to="/home" />} />
       </Switch>
     </BrowserRouter>

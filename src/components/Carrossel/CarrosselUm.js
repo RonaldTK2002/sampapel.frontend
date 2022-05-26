@@ -1,39 +1,43 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Carrossel.css";
 import Carousel from "react-bootstrap/Carousel";
 import FavoriteIcon from "@mui/icons-material/Favorite";
+import api from "../../services/api";
+import { keys } from "@mui/system";
+
 
 function CarrosselUm() {
+  const categoria = 'material_escolar'
+  const produtos_ = []
   function replaceIcon(id) {
     if (document.getElementById(id).className === "botaoFavorito")
       document.getElementById(id).className = "botaoFavoritado";
     else document.getElementById(id).className = "botaoFavorito";
   }
+  async function getProducts(){
+     
+    try {
+      
+      const response = await api.get('http://localhost:3333/produtos');
+       setProdutos([...response.data])
+       console.log([...response.data])
+       
+    } catch (error) {
+      console.warn(error);
+       alert('Algo deu errado')
+     }
 
-  class ProdutoDestaque {
-    constructor(nome, preço, imagem, id) {
-      (this.nome = nome), (this.preço = `${preço} R$`);
-      this.imagem = imagem;
-      this.id = id;
-    }
-  }
-  const produtosDestaque = [
-    new ProdutoDestaque(
-      "Borracha Mercur",
-      "2,00",
-      "/images/borracha.png",
-      "borrachamercur"
-    ),
-    new ProdutoDestaque(
-      "Lápis",
-      "7,50",
-      "images/lapis.png",
-      "lapisfabercastell"
-    ),
-  ];
+   }
+   useEffect(()=>{
+     getProducts();
+   },[])
+   
+  const [produtos,setProdutos] = useState(produtos_)
+console.log(produtos)
+  
   return (
     <Carousel variant="dark">
-      {produtosDestaque.map((produtos) => (
+      {produtos.map((produtos) => (
         <Carousel.Item>
           <div className="imagemBotao">
             <img className="img" src={produtos["imagem"]} alt="Second slide" />
@@ -48,7 +52,7 @@ function CarrosselUm() {
 
           <Carousel.Caption>
             <h3>{produtos["nome"]}</h3>
-            <p>{produtos["preço"]}</p>
+            <p>{produtos["valor"] +" R$"}</p>
             <button className="botaoCarrossel">Comprar</button>
           </Carousel.Caption>
         </Carousel.Item>

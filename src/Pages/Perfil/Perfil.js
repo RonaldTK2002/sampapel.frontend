@@ -108,7 +108,7 @@ function Perfil() {
         ];
 
     return (
-        <di>
+        <div>
             <Header />
             <div className="backgroundPerfil">
                 <div className="perfilContainer">
@@ -186,7 +186,7 @@ function Perfil() {
                 </div>
             </div>
             <Footer />
-        </di>
+        </div>
     );
 }
 
