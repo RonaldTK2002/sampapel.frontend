@@ -8,13 +8,57 @@ import { getUser_id } from '../../services/auth';
 import {logout} from "../../services/auth";
 import LogoutIcon from '@mui/icons-material/Logout';
 
+
 function Perfil() {
-    const user_id = getUser_id();
+    
   
-    function replaceIcon(id) {
-        if (document.getElementById(id).className === "botaoFavorito")
-            document.getElementById(id).className = "botaoFavoritado";
-        else document.getElementById(id).className = "botaoFavorito";
+    const user_id = getUser_id();
+    const [favoriteState, setFavoriteState] = useState(false);
+    
+    
+    async function criarListaFavoritos() {
+      const listaFavoritos = await api.get(
+        `http://localhost:3333/favoritos/${user_id}`
+      );
+      const lista = listaFavoritos.data.map((produtos) => produtos.produtos_id);
+      let arrayLista = [];
+      for (let i = 0; i < lista.length; i++) {
+        arrayLista[i] = await api.get(
+          `http://localhost:3333/produtos?produtos_id=${lista[i]}`
+        );
+      }
+  
+      const produtosArray = [];
+      arrayLista.map((objeto) => produtosArray.push(objeto.data[0]));
+  
+      setListaDeFavoritos(produtosArray);
+    }
+  
+    useEffect(() => {
+      criarListaFavoritos();
+    }, []);
+  
+    const [listaDeFavoritos, setListaDeFavoritos] = useState([]);
+  
+    async function replaceIcon(id) {
+      try {
+        let adicionarFavorito;
+  
+        if (favoriteState === false) {
+          adicionarFavorito = await api.post(
+            `http://localhost:3333/favoritos?user_id=${user_id}`,
+            { produtos_id: id }
+          );
+          setFavoriteState(true)
+          document.getElementById(id).className = "botaoFavoritado";
+        } else {
+          await api.delete(`http://localhost:3333/favoritos/${id}`);
+          setFavoriteState(false)
+          document.getElementById(id).className = "botaoFavorito";
+        }
+      } catch (error) {
+        console.warn(error);
+      }
     }
     
  async function handlePerfil(){
@@ -191,11 +235,11 @@ function Perfil() {
                             <div className="linha" />
                             <h1 className="fonteDados">Favoritos:</h1>
                             <div className='boxFavoritos'>
-                            {boxFavoritos.map((pedidosFavoritos) => {
+                            {listaDeFavoritos.map((pedidosFavoritos) => {
                                     return (
                                         <div className="boxProduto">
                                             <div className="imagemUltimosPedidos">
-                                                <img className="imgUltimosComprados" src={pedidosFavoritos.src} />
+                                                <img className="imgUltimosComprados" src={pedidosFavoritos.imagem} />
                                                 <button
                                                     className="botaoFavoritado"
                                                 >
