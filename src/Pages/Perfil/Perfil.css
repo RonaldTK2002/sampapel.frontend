@@ -186,6 +186,18 @@
     padding-bottom: 30px;
     width: 100%;
 }
+.botaoLogout{
+    border-radius:15px;
+        font-size:20px;
+        padding:10px 50px;
+        width:50%;
+        background-color: #3248AE;
+        border-color:#3248AE;
+        color:#ffffff;
+        font-weight:400;
+        margin:0 auto;
+        text-align: center;
+}
 
 @media (max-width:1200px) {
     .boxUltimosPedidos {
@@ -194,6 +206,9 @@
 
     .boxFavoritos {
         max-width: 400px;
+    }
+    .botaoLogout{
+        font-size:14px;
     }
 }
 @media (max-width:800px){
@@ -257,4 +272,10 @@
     .linha{
         width: 200px;
     }
+    .botaoLogout{
+        width:60%;
+        padding:2px 50px;
+        
+    }
+    
 }

@@ -15,16 +15,18 @@ const [password,setPassword] = useState();
     e.preventDefault();
     try {
       const response = await api.post('http://localhost:3333/login', {email,password});
+      
       alert("Bem Vindo, " + response.data.user["nome"]);
       
-      login(response.data.accessToken);
+      login(response.data.accessToken,response.data.user["user_id"]);
+
       window.location.href = "/perfil"
      
     } catch (error) {
       if(error.response.status === 403){
         alert("Credenciais Inválidas")
       }else{
-      alert('Campos prenchidos incorretamente ');
+        alert(error.response.data.validation.body.message);
     }
   console.warn(error)}
   };

@@ -1,47 +1,78 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './Perfil.css'
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import FavoriteIcon from "@mui/icons-material/Favorite";
-import { Typography } from '@mui/material';
+import api from '../../services/api';
+import { getUser_id } from '../../services/auth';
+import {logout} from "../../services/auth";
+import LogoutIcon from '@mui/icons-material/Logout';
 
 function Perfil() {
-
+    const user_id = getUser_id();
+  
     function replaceIcon(id) {
         if (document.getElementById(id).className === "botaoFavorito")
             document.getElementById(id).className = "botaoFavoritado";
         else document.getElementById(id).className = "botaoFavorito";
     }
+    
+ async function handlePerfil(){
+     
+     try {
+        const response = await api.get(`http://localhost:3333/user?user_id=${user_id}`);
+        
+        setDataPersonal(response.data)
+     } catch (error) {
+        alert(error.response)
 
-    const dadosPessoais =
+        
+        console.warn(error);
+     }
+ }
+ useEffect(()=>{
+    handlePerfil();
+  },[]);
+  function Logout(){
+      logout();
+      window.location.href = "http://localhost:3000/home";
+  }
+  const [dataPersonal,setDataPersonal] = useState([]);
+
+    console.log(dataPersonal)
+    
+    
+    const dadosPessoais= 
+
+    
         [
             {
                 title: 'E-mail:',
-                value: 'exemplo@cpejr.com.br',
+                value:dataPersonal["email"],
             },
             {
                 title: 'Nome completo:',
-                value: 'João da Silva',
+                value: dataPersonal["nome"],
             },
             {
                 title: 'CPF:',
-                value: '111.111.111-11',
+                value: dataPersonal["CPF"],
             },
             {
                 title: 'Telefone:',
-                value: '(31)9xxxx-xxxx',
+                value: dataPersonal["telefone"],
             },
             {
                 title: 'Endereço:',
-                value: 'Rua Alguma , 10',
+                value: dataPersonal["endereco"],
             },
             {
                 title: 'Cidade:',
-                value: 'Belo Horizonte',
+                value: dataPersonal["cidade"],
             },
             {
                 title: 'Estado:',
-                value: 'Minas Gerais',
+                value: dataPersonal["estado"],
             },
         ];
 
@@ -128,6 +159,7 @@ function Perfil() {
                                     </div>
                                 );
                             })}
+                            <button className= "botaoLogout" onClick = {Logout}>Logout  <LogoutIcon fontSize='small'/></button>
                             <div className="linha" />
                             <h1 className="fonteDadosPerfil">Últimos pedidos:</h1>
                             <div className='boxUltimosPedidos'>

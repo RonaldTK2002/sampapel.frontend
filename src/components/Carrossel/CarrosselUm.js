@@ -7,20 +7,19 @@ import { keys } from "@mui/system";
 
 
 function CarrosselUm() {
-  const categoria = 'material_escolar'
-  const produtos_ = []
+  
   function replaceIcon(id) {
     if (document.getElementById(id).className === "botaoFavorito")
       document.getElementById(id).className = "botaoFavoritado";
     else document.getElementById(id).className = "botaoFavorito";
   }
-  async function getProducts(){
+  async function getProductsDestaque(){
      
     try {
       
-      const response = await api.get('http://localhost:3333/produtos');
+    const response = await api.get(`http://localhost:3333/produtos?categoria=material_escolar`);
        setProdutos([...response.data])
-       console.log([...response.data])
+      
        
     } catch (error) {
       console.warn(error);
@@ -29,15 +28,17 @@ function CarrosselUm() {
 
    }
    useEffect(()=>{
-     getProducts();
+     getProductsDestaque();
    },[])
    
-  const [produtos,setProdutos] = useState(produtos_)
-console.log(produtos)
+   const [produtos,setProdutos] = useState([])
+  
+
   
   return (
     <Carousel variant="dark">
-      {produtos.map((produtos) => (
+      {produtos &&
+      produtos.map((produtos) => (
         <Carousel.Item>
           <div className="imagemBotao">
             <img className="img" src={produtos["imagem"]} alt="Second slide" />
